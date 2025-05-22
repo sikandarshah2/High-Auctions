@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidding</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
+    <!-- Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+    <style>
+        body {
+            font-family: "Playfair Display", serif;
+        }
+
+        input-group {
+            margin-top: 1.5rem;
+            /* Adjust top margin */
+        }
+
+        .form-control {
+            border-radius: 4px 0 0 4px;
+            /* Rounded left corners */
+        }
+
+        .input-group-text {
+            background-color: #f0f0f0;
+            /* Light background for the label */
+            border-radius: 0 4px 4px 0;
+            /* Rounded right corners */
+            border-left: none;
+            /* Remove left border to connect with input */
+        }
+
+        .cst-line{
+            text-decoration: underline;
+        }
+
+        #Bidlist {
+            font-family: Arial, Helvetica, sans-serif;
+            height: 130px;
+            overflow-y: scroll;
+            border: 1px solid #ddd;
+            /* Example: Add a border */
+            padding: 0.5rem;
+            /* Example: Add some padding */
+        }
+
+        #Bidlist li {
+            /* Add spacing between list items */
+            border-bottom: 1px dotted #eee;
+            /* Add a subtle separator */
+        }
+
+        #Bidlist li:last-child {
+            border-bottom: none;
+            /* Remove separator from the last item */
+        }
+
+        .c-text-cl{
+            color: rgb(143, 141, 141);
+            text-align: end;        
+        }
+        .cstm-cl{
+            background-color: lightgray;
+            font-weight: 700;
+            width: 290px;
+            height: 150px;
+            
+        }
+        .colour{
+            color: red;
+        }
+    </style>
+</head>
+<!-- <div >
+                <div class="row">
+                    <div class="col custom-text-style-2 text-center">Highest bid: <br>
+                      <p class="custom-sub-1 mt-3">16000 PKR <br>
+                        <p class="custom-sub-1-a">Base Price: 25000 PKR</p>
+                      </p>  
+                    </div>
+                    <div class="col custom-text-style-3 text-center  ">Ends in: <br>
+                       <p class="mt-3"> 3 Days <br>
+                    <p class="custom-sub-2">15 May 2025 at 16:21 PKT</p>
+                    </div>
+                </div>
+            </div> -->
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid  gap-5">
+            <!-- <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/logo.jpeg" alt="" width="80" height="95"
+                        class="d-inline-block align-text-top">
+                    
+                </a>
+            </div>   -->
+            <a class="navbar-brand s-hove " href="#">High<img src="./img/logo black.jpeg.png" width="40"
+                    height="40">Auctions</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class=" collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index2.html">Home</a>
+                    </li>
+                    <a class="nav-link" aria-current="page" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="contact.html">Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="completed.html">Completed Auctions
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Category
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="furniture.html" target="_blank">Furniture</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="painting.html" target="_blank">Arts</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="jewellers.html" target="_blank">Jewellers & Gem
+                                    Stones</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <!-- <input class="form-control me-2" type="search" placeholder=" Enter: All Items" aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit">Search</button> -->
+                    
+                    <a href="login.html" target="_blank" class="btn btn-outline-dark fw-bolder me-3 text-decoration-none">
+                        Login
+                    </a>
+                    
+                    <a href="signup.html" target="_blank" class="btn btn-outline-dark fw-bolder text-decoration-none">
+                        Sign-up
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="./img/n-1-min.jpg"  data-aos="zoom-in"  class="mt-5" height="550" width="650">
+            </div>
+            <div class="col">
+                <h1 class="cst-line mt-5 text-center" data-aos="fade-right">SEMI-RIGID Necklace
+                </h1>
+                <br>
+
+                <!-- row div start -->
+                <div class="d-flex justify-content-center align-items-center" style="height: 30vh;">
+                    <div class="row">
+                        <div class="col custom-text-style-2 text-center cstm-cl"><br>
+                            Highest bid: <br>
+                            <p class="custom-sub-1 mt-3"><span class="colour">18000 PKR</span> <br>
+                            <p class="custom-sub-1-a">Base Price: 35000 PKR</p>
+                            </p>
+                        </div>
+                        <div class="col custom-text-style-3 text-center cstm-cl"><br>
+                            Ends in: <br>
+                            <p class="mt-3"> 4 Days <br>
+                            <p class="custom-sub-2">14 april 2025 at 05:00 PKT</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- row div end  -->
+
+
+
+
+                <div class="row ms-4 ">
+                    <ul id="Bidlist" style="font-family: Arial, Helvetica, sans-serif; 
+                height: 130px; overflow-y: scroll;" class="list-group list-group-numbered">
+<li>30000 PKR</li>
+                    </ul>
+                </div>
+
+
+                <div class="input-group mb-3 mt-5 w-150 ">
+                    <input type="text" class="form-control" placeholder="Enter Your Bid" id="inputBid"
+                        aria-describedby="basic-addon2">
+                    <span class="input-group-text" id="basic-addon2">PKR</span>
+                </div>
+
+                <div class="d-grid gap-2   ">
+                    <!-- <button class="btn btn-outline-primary">Place bid</button> -->
+                    <button class="btn btn-outline-dark custom-sub-a "
+                     type="button" onclick="addBid()"> <b>Place a Bid</b></button>
+                </div>
+                <p class="custom-sub-text c-text-cl">Minimum bid: 10000 PKR.</p>
+            </div>
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col mb-5 sborder border-info">
+                <h3  data-aos="fade-right">
+                    Description:
+                </h3>
+                <p>A semi-rigid necklace blends flexibility and structure, offering a sleek, comfortable design that holds its shape for a modern look.
+
+
+
+
+</p>
+                <h3  data-aos="fade-right">
+                    Condition:
+                </h3>
+                <p>A semi-rigid necklace combines flexible and firm materials, allowing it to hold its shape while offering some bendability. It provides structure without being too stiff or too soft.
+
+
+
+
+                </p>
+            </div>
+
+
+
+
+
+
+           
+        </div>
+
+
+    </div>
+
+    <div class="container mx-auto align-items-center ">
+        <h2 class="text-center"  data-aos="fade-right">Other items of interest</h2><hr>
+        <div class="row align-items-center justify-content-center">
+           
+            <div class="col-md-2 col-sm-6 mb-4">
+                <a href="index2.html" class="text-decoration-none">
+                    <div class="card product-card">
+                        <img src="./img/jn-1-min.jpg" class="card-img-top" height="auto" alt="Aura Glass Table">
+                        <div class="card-body">
+                            <h5 class="card-title text-dark">Barcelona sofa.</h5>
+                            <p class="card-text text-dark">Stainless steel and black leather
+                                74x148x76 cm.</p>
+                            <span class="time-badge" title="Bidding End in 3 days">3 days left</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-6 mb-4">
+                <a href="index2.html" class="text-decoration-none">
+                    <div class="card product-card">
+                        <img src="./img/jr-1-min.jpg" class="card-img-top"  alt="Aura Glass Table">
+                        <div class="card-body">
+                            <h5 class="card-title text-dark">Garden Easy Sofa
+                            </h5>
+                            <p class="card-text text-dark">Grey lacquered, frames with teak strip,, height 80 (incl. plymå), 239x86, seat height 38 cm. </p>
+                            <span class="time-badge" title="Bidding End in 2 days">2 days left</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-6 mb-4">
+                <a href="index2.html" class="text-decoration-none">
+                    <div class="card product-card">
+                        <img src="./img/jer-2-min.jpg" class="card-img-top" alt="Aura Glass Table">
+                        <div class="card-body">
+                            <h5 class="card-title text-dark">White Stone Earings</h5>
+                            <p class="card-text text-dark">Cassina sofa landscape. Upholstered and covered with white leather metal.</p>
+                            <span class="time-badge" title="Bidding End in 6 days">6 days left</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2 col-sm-6 mb-4">
+                <a href="index2.html" class="text-decoration-none">
+                    <div class="card product-card">
+                        <img src="./img/jr-3-min.jpg" class="card-img-top"  alt="Aura Glass Table">
+                        <div class="card-body">
+                            <h5 class="card-title text-dark">Diamond Ring</h5>
+                            <p class="card-text text-dark">Sofa with a teak frame and loose seat and back cushions, covered and tufted with brown leather,</p>
+                            <span class="time-badge" title="Bidding End in 4 days">4 days left</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+           
+            <div class="col-md-2 col-sm-6 mb-4">
+                <a href="index2.html" class="text-decoration-none">
+                    <div class="card product-card">
+                        <img src="./img/jn-2-min.jpg" class="card-img-top" height="120px" alt="Aura Glass Table">
+                        <div class="card-body">
+                            <h5 class="card-title text-dark">18K Gold Necklace.</h5>
+                            <p class="card-text text-dark">Covered and tufted with brown leather, legs for modern
+                                interiors.</p>
+                            <span class="time-badge" title="Bidding End in 8 days">8 days left</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+         
+        </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/script.js"></script>
+
+
+    
+ <!-- footer -->
+ <footer class="container-fluid bg-dark text-white py-5 mt-5">
+    <div class="row text-center text-md-start">
+        <!-- Why Us Section -->
+        <div class="col-md-5 mb-4">
+            <h2 class="text-uppercase">Why Us</h2>
+            <p>
+                Bid on exclusive luxury items, rare collectibles, and unique art pieces at our online auction
+                platform.
+                Discover new treasures and win big with our secure and transparent bidding process.
+            </p>
+        </div>
+
+        <!-- Links and Categories Section -->
+        <div class="col-md-7">
+            <div class="row">
+                <!-- Quick Links -->
+                <div class="col-md-6 mb-4">
+                    <h2 class="text-uppercase">Links</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="index2.html" class="text-white text-decoration-none">Home</a></li>
+
+                        <li><a href="about.html" class="text-white text-decoration-none">About</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none">Contact Us</a></li>
+                        <li><a href="disclaimer.html" class="text-white text-decoration-none">Disclaimer</a></li>
+                        <!-- <li><a href="#" class="text-white text-decoration-none">Feedback</a></li>
+                        <li><a href="#" class="btn btn-outline-primary mt-2">Give Feedback</a></li> -->
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="col-md-6 mb-4">
+                    <h2 class="text-uppercase">Categories</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="furniture.html" target="_blank"
+                                class="text-white text-decoration-none">Furniture</a></li>
+                        <li><a href="painting.html" target="_blank" class="text-white text-decoration-none">Arts</a>
+                        </li>
+                        <li><a href="jewellers.html" target="_blank"
+                                class="text-white text-decoration-none">Jewellers</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Media -->
+    <div class="row mt-4">
+        <div class="col text-center">
+            <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" target="_blank" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+        </div>
+    </div>
+</footer>
+
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+</html>

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Completed Auctions Page</title>
+    <!-- Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/apple-touch-icon.png" type="image/x-icon">
+</head>
+<link rel="stylesheet" href="./css/style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid  gap-5">
+            <!-- <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/logo.jpeg" alt="" width="80" height="95"
+                        class="d-inline-block align-text-top">
+                    
+                </a>
+            </div>   -->
+            <a class="navbar-brand s-hove " href="#">High<img src="./img/logo black.jpeg.png" width="40"
+                    height="40">Auctions</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class=" collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index2.html">Home</a>
+                    </li>
+                    <a class="nav-link" aria-current="page" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="contact.html">Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="completed.html">Completed Auctions
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Category
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="furniture.html" target="_blank">Furniture</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="painting.html" target="_blank">Arts</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="jewellers.html" target="_blank">Jewellers & Gem
+                                    Stones</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <!-- <input class="form-control me-2" type="search" placeholder=" Enter: All Items" aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit">Search</button> -->
+                    <a href="login.html" target="_blank" class="btn btn-outline-dark fw-bolder me-3 text-decoration-none">
+                        Login
+                    </a>
+                    
+                    <a href="signup.html" target="_blank" class="btn btn-outline-dark fw-bolder text-decoration-none">
+                        Sign-up
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- Heading -->
+    <div class="text-center mx-auto w-50">
+        <h1 class="s-hov" data-aos="fade-right">Completed Auctions</h1>
+        <hr>
+        <hr class="text-white">
+    </div>
+
+
+
+
+    <div class="container py-5">
+
+        <!-- First Row 2 col -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-auto w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="h-100" style="max-height: auto; overflow: hidden;">
+                                <img src="./img/p-4-min.jpg" data-aos="fade-down"
+                                    class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Auctioned Chair">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Auction Item</h6>
+                                <h5 class="card-title fw-semibold mb-2">Horse Painting</h5>
+                                <p class="card-text text-secondary mb-3" data-aos="fade-left">
+                                    Explore our stunning collection of paintings, featuring vibrant colors,
+                                    and emotional expressions, designed to inspire and beautify your space.
+                                </p>
+
+                                <div class="mb-2">
+                                    <span class="badge bg-success">Sold</span>
+                                    <small class="text-muted ms-2">Sold on: January 15, 2025</small>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h6 class="mb-1" data-aos="zoom-in">Winning Bid</h6>
+                                        <p class="mb-0 fw-bold text-success" data-aos="zoom-in">5,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Base Price</h6>
+                                        <p class="mb-0 text-decoration-line-through text-danger">10,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Total Bids</h6>
+                                        <p class="mb-0">12</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Optional second column -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-auto w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="h-100" style="max-height: auto; overflow: hidden;">
+                                <img src="./img/R-2-min.jpg" data-aos="fade-down"
+                                    class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Auctioned Chair">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Auction Item</h6>
+                                <h5 class="card-title fw-semibold mb-2">Diamond Ring</h5>
+                                <p class="card-text text-secondary mb-3" data-aos="fade-left">
+                                    Adorn yourself with our exquisite collection of jewelry, featuring
+                                    stunning designs,and intricate details, crafted to make you shine.
+                                </p>
+
+                                <div class="mb-2">
+                                    <span class="badge bg-success">Sold</span>
+                                    <small class="text-muted ms-2">Sold on: January 31, 2025</small>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h6 class="mb-1" data-aos="zoom-in">Winning Bid</h6>
+                                        <p class="mb-0 fw-bold text-success" data-aos="zoom-in">5,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Base Price</h6>
+                                        <p class="mb-0 text-decoration-line-through text-danger">10,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Total Bids</h6>
+                                        <p class="mb-0">12</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Second Row 2 Col -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-auto w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="h-100" style="max-height: auto; overflow: hidden;">
+                                <img src="./img/ps-1-min.jpg" data-aos="fade-down"
+                                    class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Auctioned Chair">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Auction Item</h6>
+                                <h5 class="card-title fw-semibold mb-2">Antique Gold Horse Sculpture</h5>
+                                <p class="card-text text-secondary mb-3" data-aos="fade-left">
+                                    Explore our stunning collection of paintings, featuring vibrant colors,
+                                    and emotional expressions, designed to inspire and beautify your space.
+                                </p>
+
+                                <div class="mb-2">
+                                    <span class="badge bg-success">Sold</span>
+                                    <small class="text-muted ms-2">Sold on: February 06, 2025</small>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h6 class="mb-1" data-aos="zoom-in">Winning Bid</h6>
+                                        <p class="mb-0 fw-bold text-success" data-aos="zoom-in">5,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Base Price</h6>
+                                        <p class="mb-0 text-decoration-line-through text-danger">10,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Total Bids</h6>
+                                        <p class="mb-0">12</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Optional second column -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-auto w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="h-100" style="max-height: auto; overflow: hidden;">
+                                <img src="./img/s-2-min.jpg" data-aos="fade-down"
+                                    class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Auctioned Chair">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Auction Item</h6>
+                                <h5 class="card-title fw-semibold mb-2">Chesterfield Sofa</h5>
+                                <p class="card-text text-secondary mb-3" data-aos="fade-left">
+                                    Classic leather sofa with deep button tufting and rolled arms.
+                                </p><br><br>
+
+                                <div class="mb-2">
+                                    <span class="badge bg-success">Sold</span>
+                                    <small class="text-muted ms-2">Sold on: February 20, 2025</small>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h6 class="mb-1" data-aos="zoom-in">Winning Bid</h6>
+                                        <p class="mb-0 fw-bold text-success" data-aos="zoom-in">5,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Base Price</h6>
+                                        <p class="mb-0 text-decoration-line-through text-danger">10,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Total Bids</h6>
+                                        <p class="mb-0">12</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- Third Row 2 Col -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-auto w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="h-100" style="max-height: auto; overflow: hidden;">
+                                <img src="./img/jn-1-min.jpg" data-aos="fade-down"
+                                    class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Auctioned Chair">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Auction Item</h6>
+                                <h5 class="card-title fw-semibold mb-2">Cluster Necklace</h5>
+                                <p class="card-text text-secondary mb-3" data-aos="fade-left">
+                                    Adorn yourself with our exquisite collection of jewelry, featuring
+                                    stunning designs,and intricate details, crafted to make you shine.
+                                </p>
+
+                                <div class="mb-2">
+                                    <span class="badge bg-success">Sold</span>
+                                    <small class="text-muted ms-2">Sold on: February 25, 2025</small>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h6 class="mb-1" data-aos="zoom-in">Winning Bid</h6>
+                                        <p class="mb-0 fw-bold text-success" data-aos="zoom-in">5,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Base Price</h6>
+                                        <p class="mb-0 text-decoration-line-through text-danger">10,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Total Bids</h6>
+                                        <p class="mb-0">12</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Optional second column -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-auto w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="h-100" style="max-height: auto; overflow: hidden;">
+                                <img src="./img/t-3-min.jpg" data-aos="fade-down"
+                                    class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Auctioned Chair">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Auction Item</h6>
+                                <h5 class="card-title fw-semibold mb-2">Arm Chairs</h5>
+                                <p class="card-text text-secondary mb-3" data-aos="fade-left">
+                                    This designer chair was part of our exclusive auction collection. It received
+                                    multiple bids and is now sold to the highest bidder.
+                                </p>
+
+                                <div class="mb-2">
+                                    <span class="badge bg-success">Sold</span>
+                                    <small class="text-muted ms-2">Sold on: March 02, 2025</small>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h6 class="mb-1" data-aos="zoom-in">Winning Bid</h6>
+                                        <p class="mb-0 fw-bold text-success" data-aos="zoom-in">5,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Base Price</h6>
+                                        <p class="mb-0 text-decoration-line-through text-danger">10,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Total Bids</h6>
+                                        <p class="mb-0">12</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- fourth row -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-auto w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="h-100" style="max-height: auto; overflow: hidden;">
+                                <img src="./img/t-4-min.jpg" data-aos="fade-down"
+                                    class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Auctioned Chair">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Auction Item</h6>
+                                <h5 class="card-title fw-semibold mb-2">Aura Glass Table </h5>
+                                <p class="card-text text-secondary mb-3" data-aos="fade-left">
+                                    Elegant tempered glass table with chrome finish legs for modern interiors.
+                                </p><br>
+
+                                <div class="mb-2">
+                                    <span class="badge bg-success">Sold</span>
+                                    <small class="text-muted ms-2">Sold on: March 20, 2025</small>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h6 class="mb-1" data-aos="zoom-in">Winning Bid</h6>
+                                        <p class="mb-0 fw-bold text-success" data-aos="zoom-in">5,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Base Price</h6>
+                                        <p class="mb-0 text-decoration-line-through text-danger">10,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Total Bids</h6>
+                                        <p class="mb-0">12</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Optional second column -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-auto w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="h-100" style="max-height: auto; overflow: hidden;">
+                                <img src="./img/jr-2-min.jpg" data-aos="fade-down"
+                                    class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Auctioned Chair">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Auction Item</h6>
+                                <h5 class="card-title fw-semibold mb-2">Vogue Ring</h5>
+                                <p class="card-text text-secondary mb-3" data-aos="fade-left">
+                                    Adorn yourself with our exquisite collection of jewelry, featuring
+                                    stunning designs,and intricate details, crafted to make you shine.
+                                </p>
+
+                                <div class="mb-2">
+                                    <span class="badge bg-success">Sold</span>
+                                    <small class="text-muted ms-2">Sold on: March 15 , 2025</small>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h6 class="mb-1" data-aos="zoom-in">Winning Bid</h6>
+                                        <p class="mb-0 fw-bold text-success" data-aos="zoom-in">5,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Base Price</h6>
+                                        <p class="mb-0 text-decoration-line-through text-danger">10,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Total Bids</h6>
+                                        <p class="mb-0">12</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- fifth row -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-auto w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="h-100" style="max-height: auto; overflow: hidden;">
+                                <img src="./img/pd-1-min.jpeg" data-aos="fade-down"
+                                    class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Auctioned Chair">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Auction Item</h6>
+                                <h5 class="card-title fw-semibold mb-2">Maritime Art</h5>
+                                <p class="card-text text-secondary mb-3" data-aos="fade-left">
+                                    Explore our stunning collection of paintings, featuring vibrant colors,
+                                    and emotional expressions, designed to inspire and beautify your space.
+                                </p>
+
+                                <div class="mb-2">
+                                    <span class="badge bg-success">Sold</span>
+                                    <small class="text-muted ms-2">Sold on: April 14, 2025</small>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h6 class="mb-1" data-aos="zoom-in">Winning Bid</h6>
+                                        <p class="mb-0 fw-bold text-success" data-aos="zoom-in">5,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Base Price</h6>
+                                        <p class="mb-0 text-decoration-line-through text-danger">10,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Total Bids</h6>
+                                        <p class="mb-0">12</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Optional second column -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-auto w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="h-100" style="max-height: auto; overflow: hidden;">
+                                <img src="./img/cup new.jpg" data-aos="fade-down"
+                                    class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Auctioned Chair">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Auction Item</h6>
+                                <h5 class="card-title fw-semibold mb-2">Wood bookcases</h5>
+                                <p class="card-text text-secondary mb-3" data-aos="fade-left">
+                                    Wood bookcases are stylish wooden storage units for books and decor.
+                                </p><br> 
+
+                                <div class="mb-2">
+                                    <span class="badge bg-success">Sold</span>
+                                    <small class="text-muted ms-2">Sold on: April 29, 2025</small>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h6 class="mb-1" data-aos="zoom-in">Winning Bid</h6>
+                                        <p class="mb-0 fw-bold text-success" data-aos="zoom-in">5,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Base Price</h6>
+                                        <p class="mb-0 text-decoration-line-through text-danger">10,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Total Bids</h6>
+                                        <p class="mb-0">12</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- sixth row -->
+        <div class="row mb-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-auto w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="h-100" style="max-height: auto; overflow: hidden;">
+                                <img src="./img/n-1-min.jpg" data-aos="fade-down"
+                                    class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Auctioned Chair">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Auction Item</h6>
+                                <h5 class="card-title fw-semibold mb-2">SEMI-RIGID Necklace</h5>
+                                <p class="card-text text-secondary mb-3" data-aos="fade-left">
+                                    Adorn yourself with our exquisite collection of jewelry, featuring
+                                    stunning designs,and intricate details, crafted to make you shine.
+                                </p>
+
+                                <div class="mb-2">
+                                    <span class="badge bg-success">Sold</span>
+                                    <small class="text-muted ms-2">Sold on: May 12, 2025</small>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h6 class="mb-1" data-aos="zoom-in">Winning Bid</h6>
+                                        <p class="mb-0 fw-bold text-success" data-aos="zoom-in">5,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Base Price</h6>
+                                        <p class="mb-0 text-decoration-line-through text-danger">10,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Total Bids</h6>
+                                        <p class="mb-0">12</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Optional second column -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0 h-auto w-100">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <div class="h-100" style="max-height: auto; overflow: hidden;">
+                                <img src="./img/po-1-min.jpg" data-aos="fade-down"
+                                    class="img-fluid w-100 h-100 object-fit-cover rounded-start" alt="Auctioned Chair">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h6 class="text-muted mb-1">Auction Item</h6>
+                                <h5 class="card-title fw-semibold mb-2">Frozen Monolith</h5>
+                                <p class="card-text text-secondary mb-3" data-aos="fade-left">
+                                    Explore our stunning collection of paintings, featuring vibrant colors,
+                                    and emotional expressions, designed to inspire and beautify your space.
+                                </p>
+
+                                <div class="mb-2">
+                                    <span class="badge bg-success">Sold</span>
+                                    <small class="text-muted ms-2">Sold on: May 10, 2025</small>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col">
+                                        <h6 class="mb-1" data-aos="zoom-in">Winning Bid</h6>
+                                        <p class="mb-0 fw-bold text-success" data-aos="zoom-in">5,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Base Price</h6>
+                                        <p class="mb-0 text-decoration-line-through text-danger">10,000 PKR</p>
+                                    </div>
+                                    <div class="col">
+                                        <h6 class="mb-1">Total Bids</h6>
+                                        <p class="mb-0">12</p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- footer -->
+    <footer class="container-fluid bg-dark text-white py-5 mt-5">
+        <div class="row text-center text-md-start">
+            <!-- Why Us Section -->
+            <div class="col-md-5 mb-4">
+                <h2 class="text-uppercase">Why Us</h2>
+                <p>
+                    Bid on exclusive luxury items, rare collectibles, and unique art pieces at our online auction
+                    platform.
+                    Discover new treasures and win big with our secure and transparent bidding process.
+                </p>
+            </div>
+
+            <!-- Links and Categories Section -->
+            <div class="col-md-7">
+                <div class="row">
+                    <!-- Quick Links -->
+                    <div class="col-md-6 mb-4">
+                        <h2 class="text-uppercase">Links</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="index2.html" class="text-white text-decoration-none">Home</a></li>
+
+                            <li><a href="about.html" class="text-white text-decoration-none">About</a></li>
+                            <li><a href="contact.html" class="text-white text-decoration-none">Contact Us</a></li>
+                            <li><a href="disclaimer.html" class="text-white text-decoration-none">Disclaimer</a></li>
+                            
+                        </ul>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="col-md-6 mb-4">
+                        <h2 class="text-uppercase">Categories</h2>
+                        <ul class="list-unstyled">
+                            <li><a href="furniture.html" target="_blank"
+                                    class="text-white text-decoration-none">Furniture</a></li>
+                            <li><a href="painting.html" target="_blank" class="text-white text-decoration-none">Arts</a>
+                            </li>
+                            <li><a href="jewellers.html" target="_blank"
+                                    class="text-white text-decoration-none">Jewellers</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="row mt-4">
+            <div class="col text-center">
+                <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="#" target="_blank" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+            </div>
+        </div>
+    </footer>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+</html>

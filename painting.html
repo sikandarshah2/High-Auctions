@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painting</title>
+     <!-- Animation -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+
+       body{
+        font-family: "Playfair Display", serif;
+        }  
+
+          /* Vertical Tabs Styling */
+          .ui-tabs-vertical { width: 100%; }
+          .ui-tabs-vertical .ui-tabs-nav { 
+            padding: 0;
+            float: left; 
+            width: 100%; 
+            background: none;
+            border: none;
+          }
+          .ui-tabs-vertical .ui-tabs-nav li { 
+            clear: left; 
+            width: 100%; 
+            margin: 0;
+            border: none !important;
+            background: none;
+            border-radius: 0;
+            list-style: none;
+          }
+          .ui-tabs-vertical .ui-tabs-nav li a { 
+            text-decoration: none;
+            display: block; 
+            padding: 12px 15px;
+            color: #333;
+            font-weight: 500;
+            border-left: 3px solid transparent;
+            transition: all 0.3s ease;
+          }
+          .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active a {
+            border-left: 3px solid #0d6efd;
+            background-color: #f8f9fa;
+            color: #0d6efd;
+            font-family: "Tagesschrift", system-ui;
+          
+          }
+          .ui-tabs-vertical .ui-tabs-nav li:not(.ui-tabs-active):hover a {
+            background-color: #f8f9fa;
+            border-left: 3px solid #adb5bd;
+            font-family: "Tagesschrift", system-ui;
+          }
+          .ui-tabs-vertical .ui-tabs-panel { 
+            padding: 0 0 0 15px; 
+            float: right; 
+            width: 100%;
+            border: none;
+            background: none;
+          }
+          
+          /* Card Styling */
+          .product-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+            margin-bottom: 25px;
+            height: 100%;
+          }
+          .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+          }
+          .product-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+          }
+          .product-card .card-body {
+            padding: 1.25rem;
+          }
+          .product-card .card-title {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            color: #212529;
+          }
+          .product-card .card-text {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+          }
+          .time-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #495057;
+          }
+          
+          /* Responsive Adjustments */
+          @media (max-width: 768px) {
+            .ui-tabs-vertical .ui-tabs-nav {
+              float: none;
+              width: 100%;
+            }
+            .ui-tabs-vertical .ui-tabs-panel {
+              float: none;
+              width: 100%;
+              padding: 15px 0 0 0;
+            }
+          }
+
+          h1{
+            text-decoration: underline
+          }
+          .s-hov:hover{
+    -webkit-text-stroke: 2px black;
+    text-shadow: 5px 2px 2px rgb(156, 152, 152);
+cursor: pointer;
+color: transparent;
+
+}
+         
+        </style>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&family=Underdog&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./img/apple-touch-icon.png" type="image/x-icon">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid  gap-5">
+            <!-- <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="img/auction_9746579.png" alt="" width="80" height="95"
+                        class="d-inline-block align-text-top">
+                    
+                </a>
+            </div> -->
+            <a class="navbar-brand s-hove bg-light text-dark href="#">High<img src="./img/logo black.jpeg.png" width="40"
+              height="40">Auctions</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class=" collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="index2.html">Home</a>
+                    </li>
+                    <a class="nav-link" aria-current="page" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="contact.html">Contact
+                            </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                           Category
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="furniture.html" target="_blank">Furniture</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="painting.html" target="_blank">Arts</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="jewellers.html" target="_blank">Jewellers & Gem
+                                    Stones</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <!-- <input class="form-control me-2" type="search" placeholder=" Enter: All Items" aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit">Search</button> -->
+                    <a href="login.html" target="_blank" class="btn btn-outline-dark fw-bolder me-3 text-decoration-none">
+                      Login
+                  </a>
+                  
+                  <a href="signup.html" target="_blank" class="btn btn-outline-dark fw-bolder text-decoration-none">
+                      Sign-up
+                  </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+<!-- Heading -->
+
+<h1  class="text-center mx-auto mt-5  custom-heading  s-hov " data-aos="fade-right">"Arts / Paintings"</h1>
+
+<!-- additional section -->
+<div class="container-fluid"></div>
+
+
+
+
+
+
+
+     
+  <div class="container mt-4">
+ 
+    <div id="tabs" class="row">   
+      <div class="col-md-2">
+        <ul>
+          <li><a href="#tabs-1">Drawing</a></li>
+          <li><a href="#tabs-2">Photography</a></li>
+          <li><a href="#tabs-3">Sculptures</a></li>
+          <li><a href="#tabs-4">Others</a></li>
+        </ul>
+      </div>
+      <div class="col-md-10">
+        <!-- Drawing Tab Content -->
+        <div id="tabs-1">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 mb-4s">
+              <a href="index2.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/pd-1-min.jpeg" class="card-img-top img-fluid" style="border: 2px solid; border-radius: 3px" alt="Woody Chairs">
+                  <div class="card-body">
+                    <h5 class="card-title">Maritime Art</h5>
+                    <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                      and emotional expressions, designed to inspire and beautify your space.</p>
+                    <span class="time-badge" title="Bidding End in 2 days">2 days left</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <a href="index2.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/pd-2-min.jpeg" class="card-img-top" style="border: 2px solid; border-radius: 3px" alt="Exclusive Chairs">
+                  <div class="card-body">
+                    <h5 class="card-title">Forest Watercolor</h5>
+                    <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                      and emotional expressions, designed to inspire and beautify your space.</p>
+                    <span class="time-badge" title="Bidding Start in 5 days">5 days left</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <a href="index2.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/pd-3-min.jpeg" class="card-img-top" style="border: 2px solid; border-radius: 3px" alt="ArmChairs">
+                  <div class="card-body">
+                    <h5 class="card-title">Morning Green</h5>
+                    <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                      and emotional expressions, designed to inspire and beautify your space.</p>
+                    <span class="time-badge" title="Bidding End in 9 days">9 days left</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Photography Tab Content -->
+        <div id="tabs-2">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 mb-4">
+              <a href="index2.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/pd-1-min.jpeg" class="card-img-top" style="border: 2px solid; border-radius: 3px" alt="Aura Glass Table">
+                  <div class="card-body">
+                    <h5 class="card-title">Aura Glass Table</h5>
+                    <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                      and emotional expressions, designed to inspire and beautify your space.</p>
+                    <span class="time-badge" title="Bidding End in 8 days">8 days left</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <a href="index2.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/pd-2-min.jpeg" class="card-img-top" style="border: 2px solid; border-radius: 3px" alt="Wooden Garden Table">
+                  <div class="card-body">
+                    <h5 class="card-title">Wooden Garden Table</h5>
+                    <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                      and emotional expressions, designed to inspire and beautify your space.</p>
+                    <span class="time-badge" title="Bidding End in 3 days">3 days left</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <a href="index2.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/pd-3-min.jpeg" class="card-img-top" style="border: 2px solid; border-radius: 3px" alt="Modernist Glass Table">
+                  <div class="card-body">
+                    <h5 class="card-title">Modernist Glass Table</h5>
+                    <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                      and emotional expressions, designed to inspire and beautify your space.</p>
+                    <span class="time-badge" title="Coming Soon">Coming Soon</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Sculptures Tab Content -->
+        <div id="tabs-3">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 mb-4">
+              <div class="card product-card">
+                <img src="./img/ps-1-min.jpg" class="card-img-top" style="border: 2px solid; border-radius: 3px" alt="Chesterfield Sofa">
+                <div class="card-body">
+                  <h5 class="card-title">Horse Sculptures</h5>
+                  <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                    and emotional expressions, designed to inspire and beautify your space.</p>
+                  <span class="time-badge" title="Bidding End in 2 days">2 days left</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <div class="card product-card">
+                <img src="./img/ps-2-min.jpg" class="card-img-top" style="border: 2px solid; border-radius: 3px" alt="Sofa Contemporary">
+                <div class="card-body">
+                  <h5 class="card-title">Pair Of Lions Sculptures</h5>
+                  <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                    and emotional expressions, designed to inspire and beautify your space.</p>
+                  <span class="time-badge" title="Coming Soon">Coming Soon</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <div class="card product-card">
+                <img src="./img/ps-3-min.jpg" class="card-img-top" style="border: 2px solid; border-radius: 3px" alt="3 Pieces Leather Sofa">
+                <div class="card-body">
+                  <h5 class="card-title">French School</h5>
+                  <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                    and emotional expressions, designed to inspire and beautify your space.</p>
+                  <span class="time-badge" title="Bidding End in 5 days">5 days left</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Others tab  -->
+        <div id="tabs-4">
+            <div class="row">
+              <div class="col-md-4 col-sm-6 mb-4">
+                <a href="index2.html" class="text-decoration-none">
+                  <div class="card product-card">
+                    <img src="./img/po-1-min.jpg" class="card-img-top" style="border: 2px solid; border-radius: 3px" style="height: 220px;" alt="Aura Glass Table">
+                    <div class="card-body">
+                      <h5 class="card-title">Frozen Monolith</h5>
+                      <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                        and emotional expressions, designed to inspire and beautify your space.</p>
+                      <span class="time-badge" title="Bidding End in 8 days">8 days left</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 col-sm-6 mb-4">
+                <a href="index2.html" class="text-decoration-none">
+                  <div class="card product-card">
+                    <img src="./img/po-2-min.jpg" class="card-img-top" style="border: 2px solid; border-radius: 3px" style="height: 220px;" alt="Wooden Garden Table">
+                    <div class="card-body">
+                      <h5 class="card-title">Blue Ocean</h5>
+                      <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                        and emotional expressions, designed to inspire and beautify your space.</p>
+                      <span class="time-badge" title="Bidding End in 3 days">3 days left</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-4 col-sm-6 mb-4">
+                <a href="index2.html" class="text-decoration-none">
+                  <div class="card product-card">
+                    <img src="./img/po-3-min.jpg" class="card-img-top" style="border: 2px solid; border-radius: 3px " height: 220px; alt="Modernist Glass Table">
+                    <div class="card-body">
+                      <h5 class="card-title">Wall Of Nature</h5>
+                      <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                        and emotional expressions, designed to inspire and beautify your space.</p>
+                      <span class="time-badge" title="Coming Soon">Coming Soon</span>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        
+       
+    </div>
+  </div>
+  </div>
+
+
+  <!-- Footer -->
+ 
+  <footer class="container-fluid bg-dark text-white py-5 mt-5" >
+   
+    <div class="row text-center text-md-start">
+    
+        <!-- Why Us Section -->
+        <div class="col-md-5 mb-4">
+            <h2 class="text-uppercase">Why Us</h2>
+            <p>
+                Bid on exclusive luxury items, rare collectibles, and unique art pieces at our online auction platform. 
+                Discover new treasures and win big with our secure and transparent bidding process.
+            </p>
+        </div>
+
+        <!-- Links and Categories Section -->
+        <div class="col-md-7">
+            <div class="row">
+                <!-- Quick Links -->
+                <div class="col-md-6 mb-4">
+                    <h2 class="text-uppercase">Links</h2>
+                    <ul class="list-unstyled">
+                      <li><a href="index2.html" class="text-white text-decoration-none">Home</a></li>
+
+                        <li><a href="about.html" class="text-white text-decoration-none">About</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none">Contact Us</a></li>
+                        <li><a href="disclaimer.html"  target="_blank" class="text-white text-decoration-none">Disclaimer</a></li>
+                        <!-- <li><a href="#" class="text-white text-decoration-none">Feedback</a></li>
+                        <li><a href="#" class="btn btn-outline-primary mt-2">Give Feedback</a></li> -->
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="col-md-6 mb-4">
+                    <h2 class="text-uppercase">Categories</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="furniture.html" target="_blank" class="text-white text-decoration-none">Furniture</a></li>
+                        <li><a href="painting.html" target="_blank" class="text-white text-decoration-none">Arts</a></li>
+                        <li><a href="jewellers.html" target="_blank" class="text-white text-decoration-none">Jewellers</a></li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Media -->
+    <div class="row mt-4">
+        <div class="col text-center">
+            <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" target="_blank" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+        </div>
+    </div>
+</footer>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  $(function() {
+    $("#tabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+  });
+  </script>
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+
+</html>
+
+
+
+

@@ -1,0 +1,29 @@
+.custom-container {
+ /* margin: 0;
+ padding: 0; */
+ height: 600px;
+ display: flex;  
+  align-items: center;
+
+ justify-content: center;
+}
+.container {
+
+
+}
+.c-m{
+    padding: 25px;
+    box-shadow:5px 5px 1px rgba(128, 128, 128, 0.505) ;
+   
+}
+
+.cc{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+span{
+    color: red;
+    margin-left: 2px;
+}

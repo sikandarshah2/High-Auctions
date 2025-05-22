@@ -1,0 +1,234 @@
+body{
+    font-family: "Playfair Display", serif;
+    }
+
+    .cstm-cl{
+        background-color:rgb(204, 204, 204);
+    }
+    .txt-hov:hover{
+        color: black;
+        cursor: pointer;
+
+    }
+
+
+
+.custom-section{ height: 750px;;
+    width: auto;
+    opacity: 0.8;
+    background-image: url('../img/banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.custom-flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+
+}
+
+
+.custom-c{
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.custom-btn{
+    position: absolute;
+    right:    40px;
+    bottom:   25px ;
+   
+}
+
+.c-hov{
+    box-shadow: 10px 5px 5px rgb(160, 160, 160);
+}
+.c-hov:hover{
+box-shadow: 10px 5px 5px rgb(104, 104, 104);
+cursor: pointer;
+}
+
+.custom-product-card{
+    width: 13rem;
+     height: 100%;
+     font-size: 12px;
+     
+}
+
+.custom-img-rounded{
+    border-radius: 100%  0 0 100% ;
+}
+
+
+
+.custom-shape-divider-bottom-1746717006 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1746717006 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-1746717006 .shape-fill {
+    fill:grey;
+}
+.custom-font-style{
+font-family: Georgia, Times, 'Times New Roman', serif;
+font-size: 50px;  
+text-decoration:underline;
+
+
+}
+
+.fa-square-twitter {
+    color: rgb(114, 204, 235);
+    font-size: 20px;
+}
+
+.fa-instagram {
+    
+    font-size: 20px;
+}
+
+.fa-square-facebook {
+    color: blue;
+    font-size: 20px;
+}
+
+.custom-cc{
+align-items: center;
+justify-content: center;
+}
+
+.custom-s{
+  
+    list-style: none;
+}
+
+
+ .c-hov{
+    text-shadow: 10px 5px 5px rgb(160, 160, 160);
+} 
+.c-hov:hover{
+text-shadow: 10px 5px 5px rgb(104, 104, 104);
+cursor: pointer;
+}
+
+
+
+.s-hov:hover{
+    -webkit-text-stroke: 2px black;
+    text-shadow: 5px 2px 2px rgb(156, 152, 152);
+cursor: pointer;
+color: transparent;
+
+}
+
+.c-hove:hover{
+    text-shadow: lightblue;
+    cursor: pointer;
+}
+
+.sshov:hover{
+    transition: 0.3s ease-in-out;
+    color: rgb(248, 138, 138);
+
+}
+
+
+
+.gradient-box{
+      content: '';
+      position: absolute;
+      top: 0; right: 0; bottom: 0; left: 0;
+      z-index: -1;
+      margin: -border; /* !importanté */
+      border-radius: inherit; /* !importanté */
+      background: linear-gradient(to right, grey, black);
+    }
+  
+    .c-text:hover{
+        
+     color: white;
+    }
+  
+
+/* detail.html */
+
+.custom-text-style-1{
+    color: black;
+    font-style: oblique;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size:   40px; ;
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+  text-decoration: underline;
+ 
+}
+.custom-text-style-2{
+   font-family:Arial, Helvetica, sans-serif;
+   font-size: 20px;
+   font-weight: bold;
+   background-color: rgb(226, 227, 227);
+ 
+}
+.custom-text-style-3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    background-color:rgb(226, 227, 227);
+
+}
+.custom-sub-1{
+    color: rgb(129, 12, 12);
+    background-color: rgb(226, 227, 227);
+}
+.custom-sub-1-a{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+.custom-sub-2{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+}
+.custom-sub-a{
+    font-family: "Roboto Mono", monospace;
+   
+}
+
+.custom-sub-text{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    color: rgb(133, 134, 134);
+}
+
+
+.zoom-img{
+    overflow: hidden; /* Prevents image overflow */
+    display: inline-block; /* Keeps container size to image */
+  }
+  
+  /* Style the image */
+  .zoom-img img{
+    transition: transform 0.3s ease; /* Smooth zoom transition */
+  }
+  
+  /* Zoom on hover */
+  .zoom-img img:hover {
+    transform: scale(1.2); /* Zooms in by 20% */
+  }
+ 

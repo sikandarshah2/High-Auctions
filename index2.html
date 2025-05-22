@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>High Auctions</title>
+    <!-- Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="shortcut icon" href="./img/apple-touch-icon.png" type="image/x-icon">
+    <!-- product slider content start CSS -->
+
+    <style>
+        /* Animated button start*/
+
+        .box {
+            background: hsl(0, 0%, 100%);
+            padding: 16px 24px;
+            position: relative;
+            border-radius: 8px;
+            box-shadow: 0 0 0 1px rgba(0, 0, 0, .01);
+
+            &::after {
+                position: absolute;
+                content: "";
+                top: 15px;
+                left: 0;
+                right: 0;
+                z-index: -1;
+                height: 100%;
+                width: 100%;
+                transform: scale(0.9) translateZ(0);
+                filter: blur(15px);
+                background: linear-gradient(to left,
+                        #ffffff,
+                        #cccccc,
+                        #999999,
+                        #666666,
+                        #000000,
+                        #666666,
+                        #999999,
+                        #cccccc,
+                        #ffffff);
+                background-size: 200% 200%;
+                animation: animateGlow 1.25s linear infinite;
+            }
+        }
+
+        @keyframes animateGlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+
+        /* Animated button end*/
+
+
+
+        .slider-wrapper {
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .slider-track {
+            display: flex;
+            flex-wrap: nowrap;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .custom-product-card {
+            min-width: 20%;
+            /* 5 items per row = 100% / 5 */
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .card-img-top {
+            height: 150px;
+            object-fit: cover;
+        }
+
+        /* Button */
+        .btn-12 {
+            position: relative;
+            right: 20px;
+            bottom: 20px;
+            border: none;
+            box-shadow: none;
+            width: 130px;
+            height: 40px;
+            line-height: 42px;
+            -webkit-perspective: 230px;
+            perspective: 230px;
+        }
+
+        .btn-12 span {
+            color: white;
+            background: black;
+            background: linear-gradient(0deg, grey 0%, black) 100%;
+            display: block;
+            position: absolute;
+            width: 130px;
+            height: 40px;
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+                7px 7px 20px 0px rgba(0, 0, 0, .1),
+                4px 4px 5px 0px rgba(0, 0, 0, .1);
+            border-radius: 5px;
+            margin: 0;
+            text-align: center;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all .3s;
+            transition: all .3s;
+        }
+
+        .btn-12 span:nth-child(1) {
+            box-shadow:
+                -7px -7px 20px 0px #fff9,
+                -4px -4px 5px 0px #fff9,
+                7px 7px 20px 0px #0002,
+                4px 4px 5px 0px #0001;
+            -webkit-transform: rotateX(90deg);
+            -moz-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+            -webkit-transform-origin: 50% 50% -20px;
+            -moz-transform-origin: 50% 50% -20px;
+            transform-origin: 50% 50% -20px;
+        }
+
+        .btn-12 span:nth-child(2) {
+            -webkit-transform: rotateX(0deg);
+            -moz-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+            -webkit-transform-origin: 50% 50% -20px;
+            -moz-transform-origin: 50% 50% -20px;
+            transform-origin: 50% 50% -20px;
+        }
+
+        .btn-12:hover span:nth-child(1) {
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+                7px 7px 20px 0px rgba(0, 0, 0, .1),
+                4px 4px 5px 0px rgba(0, 0, 0, .1);
+            -webkit-transform: rotateX(0deg);
+            -moz-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+        }
+
+        .btn-12:hover span:nth-child(2) {
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+                7px 7px 20px 0px rgba(0, 0, 0, .1),
+                4px 4px 5px 0px rgba(0, 0, 0, .1);
+            color: transparent;
+            -webkit-transform: rotateX(-90deg);
+            -moz-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+        }
+
+        .btn-13 {
+            background-color: #89d8d3;
+            background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+            border: none;
+            z-index: 1;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: 100%;
+        }
+
+        .btn-12 {
+            margin-left: 400px;
+            margin-top: 30px;
+        }
+    </style>
+    <!-- product slider content end CSS -->
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container-fluid  gap-5">
+            <!-- <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="./img/logo.jpeg" alt="" width="80" height="95"
+                        class="d-inline-block align-text-top">
+                    
+                </a>
+            </div>   -->
+            <a class="navbar-brand s-hove " href="#">High<img src="./img/logo black.jpeg.png" width="40"
+                    height="40">Auctions</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class=" collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index2.html">Home</a>
+                    </li>
+                    <a class="nav-link" aria-current="page" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="contact.html">Contact
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="completed.html">Completed Auctions
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Category
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="furniture.html" target="_blank">Furniture</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="painting.html" target="_blank">Arts</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="jewellers.html" target="_blank">Jewellers & Gem
+                                    Stones</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <!-- <input class="form-control me-2" type="search" placeholder=" Enter: All Items" aria-label="Search">
+                    <button class="btn btn-outline-dark" type="submit">Search</button> -->
+                    
+                     <a href="login.html" target="_blank" class="btn btn-outline-dark fw-bolder me-3 text-decoration-none">
+                    Login
+                </a>
+                
+                <a href="signup.html" target="_blank" class="btn btn-outline-dark fw-bolder text-decoration-none">
+                    Sign-up
+                </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+    <div class=" position-relative">
+        <div class="  custom-section text-dark custom-flex-center custom-font-style text-center custom-border"
+            data-aos="flip-down"><i>Welcome
+            To High
+            Auctions <br>
+            "Step Into a world where ambition meets opportunity"</i>
+            <!-- <div class="custom-shape-divider-bottom-1746717006">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path d="M649.97 0L599.91 54.12 550.03 0 0 0 0 120 1200 120 1200 0 649.97 0z" class="shape-fill">
+                    </path>
+                </svg>
+            </div> -->
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Section Heading -->
+    <div class="text-center mx-auto w-50">
+        <h1 class="s-hov mt-5" data-aos="fade-right">Live Auctions</h1>
+        <hr>
+        <hr class="text-white">
+    </div>
+
+    <!-- Bootstrap Carousel -->
+    <div id="carouselExampleIndicators" class="carousel slide pb-5" data-bs-ride="carousel" data-aos="fade-left">
+
+        <!-- < Carousel Indicators -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+
+        <!-- Carousel Slides -->
+        <div class="carousel-inner ">
+
+            <!-- Slide 1 (Active) -->
+            <div class="carousel-item active">
+                <!-- Team Member Card -->
+
+
+                <div class="d-flex justify-content-center ">
+                    <div class="card mb-5 box"
+                        style="max-width: 60em; border: 1px solid rgb(243, 242, 242); border-radius: 5px;">
+                        <div class="row g-0 ">
+                            <div class="col-md-4 ">
+                                <img src="./img/Val.chair-min.jpeg" class="img-fluid  rounded-start">
+                            </div>
+                            <div class="col-md-8 cstm-cl">
+                                <div class="card-body text-white  ">
+                                    <h5 class="card-title txt-hov">Furniture</h5>
+                                    <h5 class="txt-hov">Zest Chair</h5>
+                                    <p class="card-text txt-hov">Discover our exquisite collections of furniture,
+                                        featuring
+                                        stylish chairs designed to enhance the beauty of your home.</p>
+                                    <p class="card-text"><small class="text-body-secondary txt-hov">Last updated 3 mins
+                                            ago</small></p>
+                                    <div class="row txt-hov">
+                                        <div class="col">
+                                            <h4>Base Price:</h4>
+                                            <p>10000 PKR</p>
+                                        </div>
+                                        <div class="col">
+                                            <h4>Maximum Bid:</h4>
+                                            <p class="sshov">8000 PKR</p>
+                                        </div>
+                                        <div class="col">
+                                            <h4>Last Bid:</h4>
+                                            <p>5000 PKR</p>
+                                        </div>
+                                    </div>
+                                    <a href="detail.html">
+                                        <div class="btn  btn-12 btn-md"><span>Place a Bid</span><span>Hover Me</span>
+                                        </div>
+                                    </a>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- < Slide 2 -->
+            <div class="carousel-item">
+                <!-- Team Member Card -->
+                <div class="d-flex justify-content-center">
+                    <div class="card mb-5 box"
+                        style="max-width: 60em; border: 1px solid rgb(243, 242, 242); border-radius: 5px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="./img/Val.pain-min.jpeg" class="h-100 img-fluid rounded-start" border-radius:
+                                    5px;>
+                            </div>
+                            <div class="col-md-8 cstm-cl">
+                                <div class="card-body text-white">
+                                    <h5 class="card-title  txt-hov">Arts and Paintings</h5>
+                                    <h5 class="txt-hov">Ship Painting</h5>
+                                    <p class="card-text txt-hov">Explore our stunning collection of paintings, featuring
+                                        vibrant
+                                        colors, and emotional expressions, designed to inspire and beautify your space.
+                                    </p>
+                                    <p class="card-text"><small class="text-body-secondary txt-hov ">Last updated 3 mins
+                                            ago</small></p>
+                                    <div class="row txt-hov">
+                                        <div class="col">
+                                            <h4>Base Price:</h4>
+                                            <p>20000 PKR</p>
+                                        </div>
+                                        <div class="col">
+                                            <h4>Maximum Bid:</h4>
+                                            <p class="sshov">22000 PKR</p>
+                                        </div>
+                                        <div class="col">
+                                            <h4>Last Bid:</h4>
+                                            <p>15000 PKR</p>
+
+                                        </div>
+                                    </div>
+                                    <a href="detail.html">
+                                        <div class="btn  btn-12 btn-md"><span>Place a Bid</span><span>Hover Me</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+                <!-- Team Member Card -->
+                <div class="d-flex justify-content-center">
+                    <div class="card mb-5 box"
+                        style="max-width: 60em; border: 1px solid rgb(243, 242, 242); border-radius: 5px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="./img/r-1-min.jpeg" class="img-fluid  rounded-start" border-radius: 5px;>
+                            </div>
+                            <div class="col-md-8 cstm-cl">
+                                <div class="card-body text-white">
+                                    <h5 class="card-title  txt-hov">Jewelles & Jems Stone</h5>
+                                    <h5 class="txt-hov">Diamond Solitaire Ring</h5>
+                                    <p class="card-text txt-hov">This is a wider card with supporting text below as a
+                                        natural lead-in to
+                                        additional content. This content is a little bit longer.</p>
+                                    <p class="card-text"><small class="text-body-secondary txt-hov">Last updated 3 mins
+                                            ago</small></p>
+                                    <div class="row txt-hov">
+                                        <div class="col">
+                                            <h4>Base Price:</h4>
+                                            <p>$12000</p>
+                                        </div>
+                                        <div class="col">
+                                            <h4>Maximum Bid:</h4>
+                                            <p class="sshov">$8000</p>
+                                        </div>
+                                        <div class="col">
+                                            <h4>Last Bid:</h4>
+                                            <p>$6000</p>
+
+                                        </div>
+                                    </div>
+                                    <a href="detail.html">
+                                        <div class="btn  btn-12 btn-md"><span>Place a Bid</span><span>Hover Me</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- </div> -->
+
+            <!-- Carousel Navigation Controls -->
+            <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+                <span class=" ">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon " aria-hidden="true"></span>
+                <span class="visually-hidden text">Next</span>
+            </button>
+
+
+        </div>
+    </div>
+
+
+
+
+    <!-- Section Heading -->
+    <div class="container custom-flex-center my-4 flex-column ">
+        <div class="text-center mx-auto w-50">
+            <h1 class="s-hov" data-aos="fade-right">Categories To Explore</h1>
+            <hr>
+            <hr class="text-white">
+        </div>
+
+
+        <div class="row ">
+            <div class="col-md-4  col-sm-12" data-aos="fade-right">
+
+                <div class=" row m-auto p-2 border bg-dark text-white" style="max-width: 440px;">
+                    <div class=" col-8">
+                        <h3>Furniture </h3>
+                        <br>
+
+
+                    </div>
+                    <div class="mx-auto col-4 zoom-img">
+                        <a href="./furniture.html"> <img src="./img/t-1-min.jpg"
+                                class="img-fluid  custom-img-rounded  h-100">
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="col-md-4  col-sm-12" data-aos="fade-up">
+
+                <div class=" row m-auto p-2 border bg-dark text-white" style="max-width: 440px;">
+                    <div class=" col-8">
+                        <h3>Arts & Paintings</h3>
+                        <br>
+
+
+                    </div>
+                    <div class="mx-auto col-4  zoom-img">
+                        <a href="painting.html"><img src="./img/p-2-min.jpg"
+                                class="img-fluid  custom-img-rounded  h-100">
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="col-md-4  col-sm-12" data-aos="fade-left">
+
+                <div class=" row m-auto p-2 border bg-dark text-white" style="max-width: 440px;">
+                    <div class=" col-8">
+                        <h3>Jewelles & Gem Stones</h3>
+                        <br>
+
+                    </div>
+                    <div class="mx-auto col-4  zoom-img">
+                        <a href="jewellers.html"><img src="./img/R-2-min.jpg"
+                                class="img-fluid  custom-img-rounded  h-100">
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- product card -->
+
+    <div class="text-center mx-auto w-50">
+        <h1 class="s-hov mt-5" data-aos="fade-right">You Might Also Like !!!</h1>
+        <hr>
+        <hr class="text-white">
+    </div>
+    <!-- /////////////// -->
+    <div class="container-fluid">
+        <!-- <div class="row mt-5">
+
+            <div class="col col-md-2 ">
+
+                <div class=" custom-product-card">
+                    <div id="" class="card c-hov h-100  ">
+                        <img src="./img/p-4-min.jpg" class="card-img-top" style="height: 221px; border: 2px solid;">
+                        <div class="card-body">
+                            <h5 class="card-title">Horse Painting</h5>
+                            <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                                and emotional expressions, designed to inspire and beautify your space. </p>
+                            <a href="#" class="btn btn-outline-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2 ">
+
+                <div class=" custom-product-card">
+                    <div id="" class="card c-hov h-100  ">
+                        <img src="./img/p-4-min.jpg" class="card-img-top" style="height: 221px;  border: 2px solid;">
+                        <div class="card-body">
+                            <h5 class="card-title">Leather Sofa</h5>
+                            <p class="card-text">Discover our exquisite collections of furniture, featuring stylish
+                                sofas designed to enhance the beauty of your home.</p>
+                            <a href="#" class="btn  btn-outline-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2 ">
+
+                <div class=" custom-product-card">
+                    <div id="" class="card c-hov h-100  ">
+                        <img src="./img/t-2-min.jpg" class="card-img-top"
+                            style="height: 221px; border: 2px solid; border-radius: 5px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Exclusive Chairs</h5>
+                            <p class="card-text">Discover our exquisite collections of furniture, featuring stylish
+                                chairs designed to enhance the beauty of your home.</p>
+                            <a href="" class="btn  btn-outline-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2 ">
+
+                <div class=" custom-product-card">
+                    <div id="" class="card c-hov h-100  ">
+                        <img src="./img/t-4-min.jpg" style="border: 2px solid; height: 221px;" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Aura Glass Table</h5>
+                            <p class="card-text">Discover our exquisite collections of furniture, featuring stylish
+                                table designed to enhance the beauty of your home.</p>
+                            <a href="#" class="btn  btn-outline-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2 ">
+
+                <div class=" custom-product-card">
+                    <div id="" class="card c-hov h-100  ">
+                        <img src="./img/Val.ergs-min.jpeg" style="border: 2px solid; height: 221px;"
+                            class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Adorn yourself with our exquisite collection of jewelry, featuring
+                                stunning designs, precious gems, and intricate details, crafted to make you shine.</p>
+                            <a href="#" class="btn  btn-outline-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="col col-md-2 ">
+
+                <div class=" custom-product-card">
+                    <div id="" class="card c-hov h-100  ">
+                        <img src="./img/R-2-min.jpg" class="card-img-top" style="border: 2px solid; height: 221px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Diamond Ring</h5>
+                            <p class="card-text">Adorn yourself with our exquisite collection of jewelry, featuring
+                                stunning designs, precious gems, and intricate details, crafted to make you shine.</p>
+                            <a href="#" class="btn  btn-outline-primary">View</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <!-- ////////////////////// -->
+
+
+
+    <!-- product slider content start -->
+    <div class="container-fluid">
+        <div class="slider-wrapper">
+            <div class="row slider-track mx-auto px-auto" id="sliderTrack">
+
+
+
+
+                <div class="col-md-2 custom-product-card">
+                    <div id="" class="card c-hov h-100" data-aos="fade-up">
+                        <img src="./img/s-3-min.jpg"  class="card-img-top h-100" style="border: 2px solid;"
+                            alt="Horse Painting">
+                        <div class="card-body">
+                            <h5 class="card-title">Leather Sofa</h5>
+                            <p class="card-text">Discover our exquisite collections of furniture, featuring stylish
+                                sofas designed to enhance the beauty of your home.</p>
+                                <a href="detail1.html" class="btn btn-outline-dark">View Detail</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-2 custom-product-card">
+                    <div id="" class="card c-hov h-100" data-aos="fade-down">
+                        <img src="./img/t-4-min.jpg" class="card-img-top h-100" style="border: 2px solid;"
+                            alt="Horse Painting">
+                        <div class="card-body">
+                            <h5 class="card-title">Aura Glass Table</h5>
+                            <p class="card-text">Discover our exquisite collections of furniture, featuring stylish
+                                sofas designed to enhance the beauty of your home.</p>
+                            <a href="detail1.html" class="btn btn-outline-dark">View Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 custom-product-card">
+                    <div id="" class="card c-hov h-100" data-aos="fade-up">
+                        <img src="./img/t-2-min.jpg" class="card-img-top h-100" style="border: 2px solid;"
+                            alt="Horse Painting">
+                        <div class="card-body">
+                            <h5 class="card-title">Exclusive Chairs</h5>
+                            <p class="card-text">Discover our exquisite collections of furniture, featuring stylish
+                                chairs designed to enhance the beauty of your home.</p>
+                                <a href="detail1.html" class="btn btn-outline-dark">View Detail</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-2 custom-product-card">
+                    <div id="" class="card c-hov h-100" data-aos="fade-down">
+                        <img src="./img/p-4-min.jpg" class="card-img-top h-100" style="border: 2px solid;"
+                            alt="Horse Painting">
+                        <div class="card-body">
+                            <h5 class="card-title">Horse Painting</h5>
+                            <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                                and emotional expressions, designed to inspire and beautify your space.</p>
+                            <a href="detail2.html" class="btn btn-outline-dark">View Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2 custom-product-card">
+                    <div id="" class="card c-hov h-100" data-aos="fade-up">
+                        <img src="./img/p-1-min.jpg" class="card-img-top h-100" style="border: 2px solid;"
+                            alt="Horse Painting">
+                        <div class="card-body">
+                            <h5 class="card-title">Continental School</h5>
+                            <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                                and emotional expressions, designed to inspire and beautify your space.</p>
+                                <a href="detail2.html" class="btn btn-outline-dark">View Detail</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-2 custom-product-card">
+                    <div id="" class="card c-hov h-100" data-aos="fade-down">
+                        <img src="./img/p-6-min.jpg" class="card-img-top h-100" style="border: 2px solid;"
+                            alt="Horse Painting">
+                        <div class="card-body">
+                            <h5 class="card-title">Olle Hanspers Boat</h5>
+                            <p class="card-text">Explore our stunning collection of paintings, featuring vibrant colors,
+                                and emotional expressions, designed to inspire and beautify your space.</p>
+                                <a href="detail2.html" class="btn btn-outline-dark">View Detail</a>
+                            </div>
+                    </div>
+                </div>
+                <div class="col-md-2 custom-product-card">
+                    <div id="" class="card c-hov h-100" data-aos="fade-up">
+                        <img src="./img/Val.ergs-min.jpeg" class="card-img-top h-100" style="border: 2px solid;"
+                            alt="Horse Painting">
+                        <div class="card-body">
+                            <h5 class="card-title">Diamond Earings</h5>
+                            <p class="card-text">Adorn yourself with our exquisite collection of jewelry, featuring
+                                stunning designs,and intricate details, crafted to make you shine.</p>
+                            <a href="detail3.html" class="btn btn-outline-dark">View Detail</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 custom-product-card">
+                    <div id="" class="card c-hov h-100" data-aos="fade-down">
+                        <img src="./img/R-2-min.jpg" class="card-img-top h-100" style="border: 2px solid;"
+                            alt="Leather Sofa">
+                        <div class="card-body">
+                            <h5 class="card-title">Diamond Ring</h5>
+                            <p class="card-text">Adorn yourself with our exquisite collection of jewelry, featuring
+                                stunning designs,and intricate details, crafted to make you shine.</p>
+                                <a href="detail3.html" class="btn btn-outline-dark">View Detail</a>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2 custom-product-card">
+                    <div id="" class="card c-hov h-100" data-aos="fade-up">
+                        <img src="./img/n-1-min.jpg" class="card-img-top h-100" style="border: 2px solid;"
+                            alt="Exclusive Chairs">
+                        <div class="card-body">
+                            <h5 class="card-title">Rigid Necklace</h5>
+                            <p class="card-text">Adorn yourself with our exquisite collection of jewelry, featuring
+                                stunning designs,and intricate details, crafted to make you shine.</p>
+                                <a href="detail3.html" class="btn btn-outline-dark">View Detail</a>
+                            </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- product slider content end -->
+
+    <div class="container-fluid custom-flex-center flex-column  ">
+
+
+        <div class="text-center mx-auto w-50 mt-4">
+            <h1 class="s-hov mt-5" data-aos="fade-right">Jewelles Iconic Brand </h1>
+            <hr>
+            <hr class="text-white">
+        </div>
+        <div class="row gap-2 w-100  justify-content-center">
+            <div class="col col-md-2  custom-flex-center ">
+                <img src="./img/brand img-1-min.png" width="100px">
+
+            </div>
+
+            <div class="col col-md-2  custom-flex-center">
+                <img src="./img/brand C  img-2-min.jpg" width="100px">
+
+            </div>
+
+            <div class="col col-md-2  custom-flex-center">
+                <img src="./img/brand img-3png-min.png" width="100px">
+
+            </div>
+
+            <div class="col col-md-2  custom-flex-center">
+                <img src="./img/brand img-4-min.png" width="100px">
+
+            </div>
+
+            <div class="col col-md-2  custom-flex-center">
+                <img src="./img/brand img-5-min.png" width="100px">
+
+            </div>
+
+            <!-- <div class="col col-md-2 border custom-flex-center">
+                <img src="./img/je-2-brand-min.png" width="100px">
+            </div> -->
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+       
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <!-- Footer -->
+ 
+  <footer class="container-fluid bg-dark text-white py-5 mt-5" >
+   
+    <div class="row text-center text-md-start">
+    
+        <!-- Why Us Section -->
+        <div class="col-md-5 mb-4">
+            <h2 class="text-uppercase">Why Us</h2>
+            <p>
+                Bid on exclusive luxury items, rare collectibles, and unique art pieces at our online auction platform. 
+                Discover new treasures and win big with our secure and transparent bidding process.
+            </p>
+        </div>
+
+        <!-- Links and Categories Section -->
+        <div class="col-md-7">
+            <div class="row">
+                <!-- Quick Links -->
+                <div class="col-md-6 mb-4">
+                    <h2 class="text-uppercase">Links</h2>
+                    <ul class="list-unstyled">
+                      <li><a href="index2.html" class="text-white text-decoration-none">Home</a></li>
+
+                        <li><a href="about.html" class="text-white text-decoration-none">About</a></li>
+                        <li><a href="contact.html" class="text-white text-decoration-none">Contact Us</a></li>
+                        <li><a href="disclaimer.html"  target="_blank" class="text-white text-decoration-none">Disclaimer</a></li>
+                        <!-- <li><a href="#" class="text-white text-decoration-none">Feedback</a></li>
+                        <li><a href="#" class="btn btn-outline-primary mt-2">Give Feedback</a></li> -->
+                    </ul>
+                </div>
+
+                <!-- Categories -->
+                <div class="col-md-6 mb-4">
+                    <h2 class="text-uppercase">Categories</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="furniture.html" target="_blank" class="text-white text-decoration-none">Furniture</a></li>
+                        <li><a href="painting.html" target="_blank" class="text-white text-decoration-none">Arts</a></li>
+                        <li><a href="jewellers.html" target="_blank" class="text-white text-decoration-none">Jewellers</a></li>
+                       
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social Media -->
+    <div class="row mt-4">
+        <div class="col text-center">
+            <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+            <a href="#" target="_blank" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+
+    <!-- product slider content start  JS-->
+
+    <script>
+        const track = document.getElementById('sliderTrack');
+        const cardWidth = track.querySelector('.custom-product-card').offsetWidth;
+        const visibleCards = 5;
+        const totalCards = track.children.length;
+        let currentIndex = 0;
+
+        function slideCards() {
+            currentIndex++;
+            if (currentIndex > totalCards - visibleCards) {
+                currentIndex = 0;
+            }
+            const translateX = -cardWidth * currentIndex;
+            track.style.transform = `translateX(${translateX}px)`;
+        }
+
+        setInterval(slideCards, 3000);
+    </script>
+    <!-- product slider content end JS -->
+
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+</html>

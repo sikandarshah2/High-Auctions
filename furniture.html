@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Furniture</title>
+   <!-- Animation -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+    rel="stylesheet">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Playfair Display", serif;
+    }
+
+    /* Vertical Tabs Styling */
+    .ui-tabs-vertical {
+      width: 100%;
+    }
+
+    .ui-tabs-vertical .ui-tabs-nav {
+      padding: 0;
+      float: left;
+      width: 100%;
+      background: none;
+      border: none;
+    }
+
+    .ui-tabs-vertical .ui-tabs-nav li {
+      clear: left;
+      width: 100%;
+      margin: 0;
+      border: none !important;
+      background: none;
+      border-radius: 0;
+      list-style: none;
+    }
+
+    .ui-tabs-vertical .ui-tabs-nav li a {
+      text-decoration: none;
+      display: block;
+      padding: 12px 15px;
+      color: #333;
+      font-weight: 500;
+      border-left: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active a {
+      border-left: 3px solid #0d6efd;
+      background-color: #f8f9fa;
+      color: #0d6efd;
+      font-family: "Tagesschrift", system-ui;
+    }
+
+    .ui-tabs-vertical .ui-tabs-nav li:not(.ui-tabs-active):hover a {
+      background-color: #f8f9fa;
+      border-left: 3px solid #adb5bd;
+      font-family: "Tagesschrift", system-ui;
+    }
+
+    .ui-tabs-vertical .ui-tabs-panel {
+      padding: 0 0 0 15px;
+      float: right;
+      width: 100%;
+      border: none;
+      background: none;
+    }
+
+    /* Card Styling */
+    .product-card {
+      transition: all 0.3s ease;
+      border: 1px solid #e9ecef;
+      margin-bottom: 25px;
+      height: 100%;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .product-card .card-body {
+      padding: 1.25rem;
+    }
+
+    .product-card .card-title {
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      color: #212529;
+    }
+
+    .product-card .card-text {
+      color: #6c757d;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .time-badge {
+      display: inline-block;
+      padding: 3px 8px;
+      background-color: #f8f9fa;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      color: #495057;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .ui-tabs-vertical .ui-tabs-nav {
+        float: none;
+        width: 100%;
+      }
+
+      .ui-tabs-vertical .ui-tabs-panel {
+        float: none;
+        width: 100%;
+        padding: 15px 0 0 0;
+      }
+    }
+
+    h1 {
+      text-decoration: underline
+    }
+    .s-hov:hover{
+    -webkit-text-stroke: 2px black;
+    text-shadow: 5px 2px 2px rgb(156, 152, 152);
+cursor: pointer;
+color: transparent;
+
+}
+  </style>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&family=Underdog&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="./img/apple-touch-icon.png" type="image/x-icon">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <div class="container-fluid  gap-5">
+      <!-- <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="img/auction_9746579.png" alt="" width="80" height="95"
+                        class="d-inline-block align-text-top">
+                    
+                </a>
+            </div> -->
+            <a  href="#" class="navbar-brand s-hove bg-light text-dark">High<img src="./img/logo black.jpeg.png" width="40"
+              height="40">Auctions</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class=" collapse navbar-collapse " id="navbarSupportedContent">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 ">
+          <li class="nav-item">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index2.html">Home</a>
+          </li>
+          <a class="nav-link" aria-current="page" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="contact.html">Contact
+              us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="completed.html">Completed Auctions
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Category
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="furniture.html" target="_blank">Furniture</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="painting.html" target="_blank">Arts</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="jewellers.html" target="_blank">Jewellers & Gem
+                  Stones</a></li>
+            </ul>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <!-- <input class="form-control me-2" type="search" placeholder=" Enter: All Items" aria-label="Search">
+          <button class="btn btn-outline-dark" type="submit">Search</button> -->
+          <a href="login.html" target="_blank" class="btn btn-outline-dark fw-bolder me-3 text-decoration-none">
+            Login
+        </a>
+        
+        <a href="signup.html" target="_blank" class="btn btn-outline-dark fw-bolder text-decoration-none">
+            Sign-up
+        </a>
+        
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Headings -->
+  <h1 class="text-center mx-auto mt-5  custom-heading  s-hov" data-aos="fade-right" >"Furniture"</h1>
+
+
+
+
+
+  <div class="container mt-4">
+
+    <div id="tabs" class="row">
+      <div class="col-md-2">
+        <ul>
+          <li><a href="#tabs-3">Sofas</a></li>
+          <li><a href="#tabs-1">Chairs</a></li>
+          <li><a href="#tabs-2">Tables</a></li>
+          <li><a href="#tabs-4">Cupboards</a></li>
+        </ul>
+      </div>
+      <div class="col-md-10">
+        <!-- Chairs Tab Content -->
+        <div id="tabs-1">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 mb-4">
+              <a href="detail.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/t-1-min.jpg" class="card-img-top" alt="Woody Chairs">
+                  <div class="card-body">
+                    <h5 class="card-title">Woody Chairs</h5>
+                    <p class="card-text">Handcrafted wooden chairs with ergonomic design for maximum comfort and style.
+                    </p>
+                    <span class="time-badge" title="Bidding End in 7 days">7 days left</span>
+                    <button class="btn btn-dark w-100  bottom-0 ">Bid Now</button>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <a href="detail.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/t-2-min.jpg" class="card-img-top" alt="Exclusive Chairs">
+                  <div class="card-body">
+                    <h5 class="card-title">Exclusive Chairs</h5>
+                    <p class="card-text">Limited edition designer chairs with premium materials and unique patterns.</p>
+                    <span class="time-badge" title="Bidding End in 7 days">7 days left</span>
+                    <button class="btn btn-dark w-100  bottom-0 ">Bid Now</button>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <a href="detail.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/t-3-min.jpg" class="card-img-top" alt="ArmChairs">
+                  <div class="card-body">
+                    <h5 class="card-title">ArmChairs</h5>
+                    <p class="card-text">Luxurious armchairs with padded armrests and high-quality upholstery.</p>
+                    <span class="time-badge" title="Sold Out">Sold Out</span>
+                    <button class="btn btn-dark w-100  bottom-0 ">Bid Now</button>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tables Tab Content -->
+        <div id="tabs-2">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 mb-4">
+              <a href="detail.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/t-4-min.jpg" class="card-img-top" alt="Aura Glass Table">
+                  <div class="card-body position-relative">
+                    <h5 class="card-title">Aura Glass Table</h5>
+                    <p class="card-text">Elegant tempered glass table with chrome finish legs for modern interiors.</p>
+                    <span class="time-badge" title="Sold Out">Sold Out</span>
+                    <button class="btn btn-dark w-100  bottom-0 ">Bid Now</button>
+                  </div>
+
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <a href="detail.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/t-5-min.jpg" class="card-img-top" alt="Wooden Garden Table">
+                  <div class="card-body">
+                    <h5 class="card-title">Wooden Garden Table</h5>
+                    <p class="card-text">Weather-resistant teak wood table perfect for outdoor dining and gatherings.
+                    </p>
+                    <span class="time-badge" title="Bidding End in 3 days">3 days left</span>
+                    <button class="btn btn-dark w-100  bottom-0 ">Bid Now</button>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <a href="detail.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/t-6-min.jpg" class="card-img-top" alt="Modernist Glass Table">
+                  <div class="card-body">
+                    <h5 class="card-title">Modernist Glass Table</h5>
+                    <p class="card-text">Sleek minimalist design with geometric metal base and glass top.</p><br>
+                    <span class="time-badge" title="Coming Soon">Coming Soon</span>
+                    <button class="btn btn-dark w-100  bottom-0 ">Bid Now</button>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sofas Tab Content -->
+        <div id="tabs-3">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 mb-4">
+              <div class="card product-card">
+                <a href="detail.html"><img src="./img/s-3-min.jpg" class="card-img-top" alt="3 Pieces Leather Sofa">
+                <div class="card-body"></a>
+                  <h5 class="card-title">3 Pcs Leather Sofa</h5>
+                  <p class="card-text">Luxury genuine leather sofa set with matching loveseat and chair. </p><br>
+                  <span class="time-badge" title="Bidding End in 5 days">5 days left</span>
+                  <button class="btn btn-dark w-100  bottom-0 ">Bid Now</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <div class="card product-card">
+                <img src="./img/s-1-min.jpg" class="card-img-top" alt="Chesterfield Sofa">
+                <div class="card-body">
+                  <h5 class="card-title">Sofa Contemporary</h5>
+                  <p class="card-text">Classic leather sofa with deep button tufting and rolled arms.</p><br>
+                  <span class="time-badge" title="Bidding End in 2 days">2 days left</span>
+                  <button class="btn btn-dark w-100  bottom-0 ">Bid Now</button>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <div class="card product-card">
+                <img src="./img/s-2-min.jpg" class="card-img-top" alt="Sofa Contemporary">
+                <div class="card-body">
+                  <h5 class="card-title">Chesterfield Sofa</h5>
+                  <p class="card-text">Modern sectional sofa with clean lines and premium fabric upholstery.</p>
+                  <span class="time-badge" title="Sold Out">Sold Out</span>
+                  <button class="btn btn-dark w-100  bottom-0 ">Bid Now</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+        <!-- Cupboards tab  -->
+        <div id="tabs-4">
+          <div class="row">
+            <div class="col-md-4 col-sm-6 mb-4">
+              <a href="index2.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/cup 2-min.jpg" class="card-img-top " alt="Aura Glass Table">
+                  <div class="card-body">
+                    <h5 class="card-title">Pine Bedside Tables</h5>
+                    <p class="card-text">Pine bedside tables are rustic, durable furniture pieces made from pine wood,
+                      offering convenient storage beside the bed.</p>
+                    <span class="time-badge" title="Bidding End in 8 days">8 days left</span>
+                    <button class="btn btn-dark w-100  bottom-0 ">Bid Now</button>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <a href="index2.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/cup new.jpg" class="card-img-top " alt="Wooden Garden Table">
+                  <div class="card-body">
+                    <h5 class="card-title">Wood Bookcases</h5>
+                    <p class="card-text">Wood bookcases are stylish wooden storage units for books and decor.</p><br><br> 
+                    <span class="time-badge" title="Sold Out">Sold Out</span>
+                    <button class="btn btn-dark w-100  bottom-0 ">Bid Now</button>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4">
+              <a href="index2.html" class="text-decoration-none">
+                <div class="card product-card">
+                  <img src="./img/cup 3-min.jpg" class="card-img-top " alt="Modernist Glass Table">
+                  <div class="card-body">
+                    <h5 class="card-title">POT CABINETS</h5>
+                    <p class="card-text">Pot cabinets are storage units designed to organize and store kitchen pots,
+                      pans, and cooking utensils efficiently.</p>
+                    <span class="time-badge" title=" Bidding end in 4 days">4 days left</span>
+                    <button class="btn btn-dark w-100  bottom-0 ">Bid Now</button>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+  <footer class="container-fluid bg-dark text-white py-5 mt-5">
+    <div class="row text-center text-md-start">
+      <!-- Why Us Section -->
+      <div class="col-md-5 mb-4">
+        <h2 class="text-uppercase">Why Us</h2>
+        <p>
+          Bid on exclusive luxury items, rare collectibles, and unique art pieces at our online auction platform.
+          Discover new treasures and win big with our secure and transparent bidding process.
+        </p>
+      </div>
+
+      <!-- Links and Categories Section -->
+      <div class="col-md-7">
+        <div class="row">
+          <!-- Quick Links -->
+          <div class="col-md-6 mb-4">
+            <h2 class="text-uppercase">Links</h2>
+            <ul class="list-unstyled">
+              <li><a href="index2.html" class="text-white text-decoration-none">Home</a></li>
+
+              <li><a href="about.html" class="text-white text-decoration-none">About</a></li>
+              <li><a href="contact.html" class="text-white text-decoration-none">Contact Us</a></li>
+              <a href="disclaimer.html" class="text-white text-decoration-none">Disclaimer</a>
+
+              <!-- <li><a href="#" class="text-white text-decoration-none">Feedback</a></li>
+                        <li><a href="#" class="btn btn-outline-primary mt-2">Give Feedback</a></li> -->
+            </ul>
+          </div>
+
+          <!-- Categories -->
+          <div class="col-md-6 mb-4">
+            <h2 class="text-uppercase">Categories</h2>
+            <ul class="list-unstyled">
+              <li><a href="furniture.html" target="_blank" class="text-white text-decoration-none">Furniture</a></li>
+              <li><a href="painting.html" target="_blank" class="text-white text-decoration-none">Arts</a></li>
+              <li><a href="jewellers.html" target="_blank" class="text-white text-decoration-none">Jewellers</a></li>
+              <li>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Social Media -->
+    <div class="row mt-4">
+      <div class="col text-center">
+        <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-facebook fa-lg"></i></a>
+        <a href="#" target="_blank" class="text-white me-3"><i class="fab fa-instagram fa-lg"></i></a>
+        <a href="#" target="_blank" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    $(function () {
+      $("#tabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+    });
+  </script>
+</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+</script>
+
+
+</html>

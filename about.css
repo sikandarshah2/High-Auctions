@@ -1,0 +1,71 @@
+
+
+.custome-footer{
+    position:static;
+    bottom: 0;
+    background-color: rgb(228, 228, 228);
+    
+    }
+
+
+
+    .custome-section{
+        height: 800px;
+        width: auto;
+        border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+   
+    
+    background-image: url('./img/about-img.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    opacity: 0.8;
+    font-size:100px;
+    font-weight: 600;
+    
+  
+    
+    }
+    .custome-center{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+    }
+    .div p {
+        text-align: center;
+        
+    }
+    .c-hov{
+        box-shadow: 10px 5px 5px rgb(160, 160, 160);
+    }
+.c-hov:hover{
+    box-shadow: 10px 5px 5px rgb(104, 104, 104);
+cursor: pointer;
+}
+   
+.custom-style{ height: 500px;
+    opacity: 0.8;
+    background-image:url(aution\ cover.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.fa-square-twitter{
+    color: rgb(114, 204, 235);
+    font-size: 20px;
+}
+
+.fa-instagram{
+    
+    font-size: 20px;
+}
+
+.fa-square-facebook{
+    color: blue;
+    font-size: 20px;
+}
+
